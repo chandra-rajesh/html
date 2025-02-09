@@ -86,6 +86,11 @@ For Software:# Gradia KTU
 [https://drive.google.com/drive/folders/1yUTUIS2yO_LelniB2BdWHneph4wOnXuB?usp=sharing]
 *It shows how everything works and how we can upload files and later retrieve it*
 
+## Issues
+-Chat Bot AI couldnt be integrated
+-Our Submission on the Application reads Gredia KTU (Pardon me the clock ticking gave me anxiety and i fumbled :"))
+-Needs very much work and i swear the website is so much needed, we gonna fix it (desperate times). 
+
 ## Team Contributions
 - Chandra Rajesh: Worked on front end 
 - Sahala Mariyam: Worked on back end
