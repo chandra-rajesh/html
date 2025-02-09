@@ -7,6 +7,7 @@ const app = express()
 const PORT = 3000;
 
 const cors = require("cors");
+const { error } = require('console')
 app.use(cors());
 
 const dataDir = path.join(__dirname, "data")
@@ -28,6 +29,38 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage})
+app.use("/pdfs", express.static("data/PDF"));
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"))
+})
+app.get("/home", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "home.html"))
+})
+app.get("/searc", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "adminauth.html"))
+})
+
+app.use(express.static("public"));
+
+app.get("/search", (req,res) => {
+    const {department, subject}= req.query
+    
+    if(!department || !subject){
+        return res.status(400).json({error : "Missing something"})
+    }~
+
+    fs.readFile("data/files.json", "utf-8", (err,data) => {
+        if(err){
+            return res.status(500).json({error:"Error reading json files"})
+        }
+
+        const files = JSON.parse(data)
+        const mathFIles = files.filter(file => file.department === department && file.subject.toLowerCase().includes(subject.toLowerCase()))
+        res.json(mathFIles)
+    })
+})
+
 
 app.post("/upload",upload.single("file"), (req,res) => {
     const {department , semester, subject} = req.body

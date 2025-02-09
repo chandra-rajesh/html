@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Gradia KTU</title>
+</head>
+<body>
+    <h2>Search Notes</h2>
+<label for="searchDepartment">Select Department:</label>
+<select id="searchDepartment" required>
+    <option value="">--Select Department--</option>
+    <option value="aeronautical">Aeronautical Engineering</option>
+                    <option value="agricultural">Agricultural Engineering</option>
+                    <option value="applied_electronics">Applied Electronics & Instrumentation</option>
+                    <option value="ai_data_science">Artificial Intelligence and Data Science</option>
+                    <option value="ai_machine_learning">Artificial Intelligence and Machine Learning</option>
+                    <option value="automobile">Automobile Engineering</option>
+                    <option value="biomedical">Bio Medical Engineering</option>
+                    <option value="biotechnology">Bio Technology</option>
+                    <option value="biotechnology_biochemical">Bio Technology and Biochemical Engineering</option>
+                    <option value="chemical">Chemical Engineering</option>
+                    <option value="civil">Civil Engineering</option>
+                    <option value="computer_science_design">Computer Science & Design</option>
+                    <option value="computer_science_engineering">Computer Science & Engineering</option>
+                    <option value="computer_science_ai_ml">Computer Science & Engineering (Artificial Intelligence & Machine Learning)</option>
+                    <option value="computer_science_data_science">Computer Science & Engineering (Data Science)</option>
+                    <option value="electrical_electronics">Electrical & Electronics Engineering</option>
+                    <option value="electronics_communication">Electronics & Communication Engineering</option>
+                    <option value="electronics_instrumentation">Electronics & Instrumentation Engineering</option>
+                    <option value="electronics_computer">Electronics and Computer Engineering</option>
+                    <option value="electronics_telecommunication">Electronics and Telecommunication Engineering</option>
+                    <option value="food_technology">Food Technology</option>
+                    <option value="industrial_engineering">Industrial Engineering</option>
+                    <option value="information_technology">Information Technology</option>
+                    <option value="instrumentation_control">Instrumentation & Control Engineering</option>
+                    <option value="mechanical">Mechanical Engineering</option>
+                    <option value="mechatronics">Mechatronics Engineering</option>
+                    <option value="metallurgical_materials">Metallurgical & Materials Engineering</option>
+                    <option value="naval_architecture">Naval Architecture & Ship Building</option>
+                    <option value="polymer">Polymer Engineering</option>
+                    <option value="printing">Printing Technology</option>
+                    <option value="production">Production Engineering</option>
+                    <option value="robotics_automation">Robotics & Automation</option>
+                    <option value="safety_fire">Safety & Fire Engineering</option>
+</select>
+
+<label for="searchSubject">Enter Subject:</label>
+<input type="text" id="searchSubject" placeholder="Enter subject name" required>
+
+<button id="searchBtn">Search</button>
+
+<div id="results"></div>
+
+<script>
+    document.getElementById("searchBtn").onclick = async function () {
+        const department = document.getElementById("searchDepartment").value;
+        const subject = document.getElementById("searchSubject").value.trim();
+
+        if (!department || !subject) {
+            alert("Please select a department and enter a subject.");
+            return;
+        }
+
+        const response = await fetch(`http://localhost:3000/search?department=${department}&subject=${subject}`);
+        const files = await response.json();
+
+        const resultsDiv = document.getElementById("results");
+        resultsDiv.innerHTML = ""; // Clear previous results
+
+        if (files.length === 0) {
+            resultsDiv.innerHTML = "<p>No files found.</p>";
+        } else {
+            files.forEach(file => {
+    const link = document.createElement("a");
+    link.href = `/pdfs/${file.filename}`; // Use the correct path
+    link.textContent = file.filename;
+    link.download = file.filename; // Ensures download behavior
+    link.target = "_blank";
+
+    const listItem = document.createElement("p");
+    listItem.appendChild(link);
+    resultsDiv.appendChild(listItem);
+});
+
+        }
+    };
+</script>
+</body>
+</html>            
