@@ -62,7 +62,7 @@
             return;
         }
 
-        const response = await fetch(`http://localhost:3000/search?department=${department}&subject=${subject}`);
+        const response = await fetch(`https://html-henna-three.vercel.app:3000/search?department=${department}&subject=${subject}`);
         const files = await response.json();
 
         const resultsDiv = document.getElementById("results");
