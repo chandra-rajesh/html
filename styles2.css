@@ -1,0 +1,71 @@
+/* Reset some default styles */
+body, h1, h2, p, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the body background and font */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333; /* Dark text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Header styles */
+header {
+    text-align: center; /* Center text in header */
+    padding: 20px;
+    color: rgb(0, 0, 0); /* White text color */
+}
+
+#logo {
+    width: 100px; /* Set logo width */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 10px; /* Space above logo */
+}
+
+/* Main content styles */
+main {
+    text-align: center; /* Center text in main */
+    margin-top: 20px; /* Space above main content */
+}
+
+/* Button container styles */
+.button-container {
+    display: flex; /* Use flexbox for button alignment */
+    justify-content: center; /* Center buttons horizontally */
+    margin-top: 80px; /* Space above buttons */
+    
+}
+
+/* Button styles */
+button {
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for buttons */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin: 0 10px; /* Space between buttons */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Footer styles */
+footer {
+    margin-top: auto; /* Push footer to the bottom */
+    padding: 10px;
+    text-align: center; /* Center footer text */
+    /* Blue background for footer */
+    color: rgb(0, 0, 0); /* White text color */
+}

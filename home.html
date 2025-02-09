@@ -4,7 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Gradia KTU</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+        body, h1, h2, p, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #efe872; 
+            color: #333; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; 
+            height: auto; 
+        }
+
+        
+        header {
+            text-align: center; 
+            padding: 20px;
+             
+            color: white; 
+        }
+
+        #logo {
+            width: 100px; 
+            height: auto; 
+            margin-top: 10px;
+        }
+
+        
+        main {
+            text-align: center; /* Center text in main */
+            margin-top: 20px; /* Space above main content */
+        }
+
+        /* Department container styles */
+        .department-container {
+            display: flex; /* Use flexbox for layout */
+            flex-wrap: wrap; /* Allow wrapping of boxes */
+            justify-content: center; /* Center boxes horizontally */
+            margin-top: 20px; /* Space above department boxes */
+        }
+
+        /* Department box styles */
+        .department-box {
+            background-color: #ffffff; /* White background for boxes */
+            border: 1px solid #ffffff; /* Blue border */
+            border-radius: 8px; /* Rounded corners */
+            padding: 20px; /* Padding inside boxes */
+            margin: 10px; /* Space between boxes */
+            width: 200px; /* Fixed width for boxes */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effect */
+        }
+
+        .department-box:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+        }
+
+        
+        input[type="text"] {
+            padding: 10px; 
+            margin-top: 20px; 
+            width: 300px;
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+        }
+
+        button {
+            background-color: #28a745; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            padding: 10px 20px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            margin-left: 10px; 
+            transition: background-color 0.3s; 
+        }
+
+        button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+        /* Footer styles */
+        footer {
+            margin-top: auto; /* Push footer to the bottom */
+            padding: 10px;
+            text-align: center; /* Center footer text */
+            background-color: #007BFF; /* Blue background for footer */
+            color: white; /* White text color */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -12,7 +110,6 @@
         <img src="logo.png" alt="Logo" id="logo">
     </header>
     <main>
-        
         <div id="uploadSection" style="display: none;">
             <input type="file" id="fileInput" accept=".pdf" />
             <button id="uploadButton">Upload</button>
@@ -25,50 +122,124 @@
         </div>
 
         <h2>Departments</h2>
-        <ul id="departments">
-            <ul id="departments">
-                <li><a href="#">B.Tech Aeronautical Engineering</a></li>
-                <li><a href="#">B.Tech Agricultural Engineering</a></li>
-                <li><a href="#">B.Tech Applied Electronics & Instrumentation</a></li>
-                <li><a href="#">B.Tech Artificial Intelligence and Data Science</a></li>
-                <li><a href="#">B.Tech Artificial Intelligence and Machine Learning</a></li>
-                <li><a href="#">B.Tech Automobile Engineering</a></li>
-                <li><a href="#">B.Tech Bio Medical Engineering</a></li>
-                <li><a href="#">B.Tech Bio Technology</a></li>
-                <li><a href="#">B.Tech Bio Technology and Biochemical Engineering</a></li>
-                <li><a href="#">B.Tech Chemical Engineering</a></li>
-                <li><a href="#">B.Tech Civil Engineering</a></li>
-                <li><a href="#">B.Tech Computer Science & Design</a></li>
-                <li><a href="#">B.Tech Computer Science & Engineering</a></li>
-                <li><a href="#">B.Tech Computer Science & Engineering (Artificial Intelligence & Machine Learning)</a></li>
-                <li><a href="#">B.Tech Computer Science & Engineering (Data Science)</a></li>
-                <li><a href="#">B.Tech Electrical & Electronics Engineering</a></li>
-                <li><a href="#">B.Tech Electronics & Communication Engineering</a></li>
-                <li><a href="#">B.Tech Electronics & Instrumentation Engineering</a></li>
-                <li><a href="#">B.Tech Electronics and Computer Engineering</a></li>
-                <li><a href="#">B.Tech Electronics and Telecommunication Engineering</a></li>
-                <li><a href="#">B.Tech Food Technology</a></li>
-                <li><a href="#">B.Tech Industrial Engineering</a></li>
-                <li><a href="#">B.Tech Information Technology</a></li>
-                <li><a href="#">B.Tech Instrumentation & Control Engineering</a></li>
-                <li><a href="#">B.Tech Mechanical Engineering</a></li>
-                <li><a href="#">B.Tech Mechatronics Engineering</a></li>
-                <li><a href="#">B.Tech Metallurgical & Materials Engineering</a></li>
-                <li><a href="#">B.Tech Naval Architecture & Ship Building</a></li>
-                <li><a href="#">B.Tech Polymer Engineering</a></li>
-                <li><a href="#">B.Tech Printing Technology</a></li>
-                <li><a href="#">B.Tech Production Engineering</a></li>
-                <li><a href="#">B.Tech Robotics & Automation</a></li>
-                <li><a href="#">B.Tech Safety & Fire Engineering</a></li>
-            </ul>
-        </ul>
-        <input type="text" id="search" placeholder="Search for notes...">
-        <button id="searchButton">Search</button>
-        <h2>Upload Your Document</h2>
-    </main>
-    <footer>
-        <p>&copy; 2025 Gradia KTU notes</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
-</html>
+        <div class="department-container">
+            <div class="department-box" onclick="window.location.href='aeronautical.html'">
+                <h3>B.Tech Aeronautical Engineering</h3>
+            </div>
+            <div class="department-box" onclick="window.location.href='agricultural.html'">
+                <h3>B.Tech Agricultural Engineering</h3>
+            </div>
+            <div class="department-box" onclick="window.location.href='applied_electronics.html'">
+                <h3>B.Tech Applied Electronics & Instrumentation</h3>
+            </div>
+            <div class="department-box" onclick="window.location.href='ai_data_science.html'">
+                <h3>B.Tech Artificial Intelligence and Data Science</h3>
+            </div>
+            <div class="department-box" onclick="window.location.href='ai_machine_learning.html'">
+                <h3>B.Tech Artificial Intelligence and Data Science</h3>
+            </div>
+            <div class="department-box" onclick="window.location.href='aeronautical.html'">
+                <h3>B.Tech Aeronautical Engineering</h3>
+            </div>
+            <div class="department-box" onclick="window.location.href='agricultural.html'">
+                <h3>B.Tech Agricultural Engineering</h3>
+            </div>
+            <div class="department-box" onclick="window.location.href='applied_electronics.html'">
+                <h3>B.Tech Applied Electronics & Instrumentation</h3>
+            </div>
+            <div class="department-box" onclick="window.location.href='ai_data_science.html'">
+                <h3>B.Tech Artificial Intelligence and Data Science</h3>
+            </div>
+            <div class="department-box" onclick="window.location.href='ai_machine_learning.html'">
+                <h3>B.Tech Artificial Intelligence and Machine Learning</h3>
+            </div>
+            <div class="department-box" onclick="window.location.href='automobile.html'">
+                <h3>B.Tech Automobile Engineering</h3>
+            </div>
+            <div class="department-box" onclick="window.location.href='biomedical.html'">
+                <h3>B.Tech Bio Medical Engineering</h3>
+            </div>
+            <div class="department-box" onclick="window.location.href='biotechnology.html'">
+                <h3>B.Tech Bio Technology</h3>
+            </div>
+            <div class="department-box" onclick="window.location.href='biotechnology_biochemical.html'">
+                <h3>B.Tech Bio Technology and Biochemical Engineering</h3>
+            </div>
+            <div class="department-box" onclick="window.location.href='chemical.html'">
+                <h3>B.Tech Chemical Engineering</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='civil.html'">
+                        <h3>B.Tech Civil Engineering</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='computer_science_design.html'">
+                        <h3>B.Tech Computer Science & Design</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='computer_science_engineering.html'">
+                        <h3>B.Tech Computer Science & Engineering</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='computer_science_ai_ml.html'">
+                        <h3>B.Tech Computer Science & Engineering (Artificial Intelligence & Machine Learning)</h3>
+                    </div>
+                    <div class="department-box" onclick="window
+                    
+                    
+                    
+                    .location.href='computer_science_data_science.html'">
+                        <h3>B.Tech Computer Science & Engineering (Data Science)</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='electrical_electronics.html'">
+                        <h3>B.Tech Electrical & Electronics Engineering</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='electronics_communication.html'">
+                        <h3>B.Tech Electronics & Communication Engineering</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='electronics_instrumentation.html'">
+                        <h3>B.Tech Electronics & Instrumentation Engineering</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='electronics_computer.html'">
+                        <h3>B.Tech Electronics and Computer Engineering</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='electronics_telecommunication.html'">
+                        <h3>B.Tech Electronics and Telecommunication Engineering</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='food_technology.html'">
+                        <h3>B.Tech Food Technology</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='industrial_engineering.html'">
+                        <h3>B.Tech Industrial Engineering</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='information_technology.html'">
+                        <h3>B.Tech Information Technology</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='instrumentation_control.html'">
+                        <h3>B.Tech Instrumentation & Control Engineering</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='mechanical_engineering.html'">
+                        <h3>B.Tech Mechanical Engineering</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='mechatronics_engineering.html'">
+                        <h3>B.Tech Mechatronics Engineering</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='metallurgical_materials.html'">
+                        <h3>B.Tech Metallurgical & Materials Engineering</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='naval_architecture.html'">
+                        <h3>B.Tech Naval Architecture & Ship Building</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='polymer_engineering.html'">
+                        <h3>B.Tech Polymer Engineering</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='printing_technology.html'">
+                        <h3>B.Tech Printing Technology</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='production_engineering.html'">
+                        <h3>B.Tech Production Engineering</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='robotics_automation.html'">
+                        <h3>B.Tech Robotics & Automation</h3>
+                    </div>
+                    <div class="department-box" onclick="window.location.href='safety_fire_engineering.html'">
+                        <h3>B.Tech Safety & Fire Engineering</h3>
+                    </div>
+                </div>
+            

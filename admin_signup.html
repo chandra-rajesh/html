@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Sign Up - Gradia KTU</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Create an Admin Account</h1>
+        <img src="logo.png" alt="Logo" id="logo">
+    </header>
+    <main>
+        <form id="signupForm">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit" id="signupButton">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="admin_login.html">Login</a></p>
+    </main>
+    <script>
+        function handleSignup(event) {
+            event.preventDefault(); // Prevent the default form submission
+            // Here you would typically handle the signup process
+            // If successful, redirect to admin home
+            window.location.href = 'adminhome.html'; // Redirect to admin home page
+        }
+    </script>
+    <footer>
+        <p>&copy; 2025 Gradia KTU</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
