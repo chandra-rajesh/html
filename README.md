@@ -56,29 +56,30 @@ For Software:# Gradia KTU
 - **Authentication & Database**: *To be implemented*
 - **there are some issues in the deployment, please run locally**
 
-# Screenshots (Add at least 3)
-![![image](https://github.com/user-attachments/assets/81d48e0a-33d3-4056-a81e-6b5329c1fe95)
-]
+# Screenshots
+(https://github.com/user-attachments/assets/81d48e0a-33d3-4056-a81e-6b5329c1fe95)
+
 *First Page*
 
-![![image](https://github.com/user-attachments/assets/3d750b6a-0b93-46f0-950e-9426b37ff96d)
+[![image](https://github.com/user-attachments/assets/3d750b6a-0b93-46f0-950e-9426b37ff96d)
 ]
+
 *Second page*
 
-![![image](https://github.com/user-attachments/assets/25ed2a54-6cd0-4da0-8147-2a9bb705dd2a)
-](Add screenshot 3 here with proper name)
+[![image](https://github.com/user-attachments/assets/25ed2a54-6cd0-4da0-8147-2a9bb705dd2a)
+]
 *Uploading of Documents*
 
 # Build Photos
 ![![WhatsApp Image 2025-02-09 at 10 11 42_b71e7c99](https://github.com/user-attachments/assets/2747f3b5-133d-4617-8fd5-3de889cea2a3)
 ]
 
-![![image](https://github.com/user-attachments/assets/d6f9380a-5062-4721-b403-57730cf87d4f)
-](Add photos of build process here)
+[![image](https://github.com/user-attachments/assets/d6f9380a-5062-4721-b403-57730cf87d4f)
+]
 *Code*
 
-![![image](https://github.com/user-attachments/assets/e1a9df2b-95fe-4f1f-934a-746322696c35)
-](Add photo of final product here)
+[![image](https://github.com/user-attachments/assets/e1a9df2b-95fe-4f1f-934a-746322696c35)
+]
 *Explain the final build*
 
 ### Project Demo
